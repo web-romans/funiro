@@ -1,0 +1,20 @@
+.header {
+    padding: 40px 0;
+    @include first-page-bg;
+    &__container {
+        @include flex-center-start;
+        @include adaptive("gap", 40, 15, 1);
+    }
+
+    &__logo {
+        font-weight: 700;
+        font-size: rem(24);
+        line-height: 1.2;
+        color: #000000;
+        @include hover-link;
+    }
+
+    &__search {
+        flex: 1 1 auto;
+    }
+}

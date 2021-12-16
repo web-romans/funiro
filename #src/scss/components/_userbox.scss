@@ -1,0 +1,23 @@
+.userbox {
+    @include flex-center;
+    @include adaptive("gap", 33, 15, 1);
+    a {
+        font-size: rem(21);
+        color: var(--color-black);
+        @include hover-link;
+    }
+
+    &__icon {
+        width: rem(38);
+        height: rem(38);
+    }
+
+    &__icon-img {
+        width: rem(40);
+        height: rem(40);
+        border-radius: 50%;
+        img {
+            @include full-img;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.nav {
+    &__list {
+        @include flex-center-betwen;
+        margin: 0 -20px;
+    }
+    &__item {
+        margin: 0 22px;
+    }
+
+    &__link {
+        font-family: "Gilroy", sans-serif;
+        font-weight: 500;
+        font-size: rem(16);
+        line-height: 1.5;
+        color: #3a3a3a;
+        &--sub {
+            padding-right: rem(23);
+            background-image: url(../img/arrow-ico.svg);
+            background-repeat: no-repeat;
+            background-position: right center;
+            &:hover {
+                background-image: url(../img/arrow-ico-hover.svg);
+            }
+        }
+        @include hover-link;
+    }
+}

@@ -1,0 +1,22 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
+    min-width: 320px;
+}
+
+a {
+    text-decoration: none;
+}
+
+$maxWidth: 1440;
+$maxWidthContainer: 1276;

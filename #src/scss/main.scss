@@ -1,0 +1,21 @@
+// базовые подключения
+@import "settings";
+@import "mixins";
+@import "vars";
+@import "fonts";
+@import "typography";
+@import "animate";
+
+// компоненты страницы
+
+// подключения компонентов страницы (большие компоненты)
+@import "./components/header";
+
+@import "./components/footer";
+
+// подключения компонентов страницы (маленькие компоненты)
+@import "./components/burger";
+@import "./components/nav";
+@import "./components/sub-menu";
+@import "./components/search-form";
+@import "./components/userbox";

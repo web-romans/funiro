@@ -1,0 +1,94 @@
+@use "sass:math";
+
+@function prc($pxOne, $pxTwo) {
+    $result: math.div($pxOne, $pxTwo) * 100%;
+    @return $result;
+}
+
+@function rem($px) {
+    $result: math.div($px, 16) + rem;
+    @return $result;
+}
+
+@function em($px) {
+    $result: math.div($px, 16) + em;
+    @return $result;
+}
+
+// Thx https://youtu.be/eaOAY0vIB4U
+@mixin adaptive($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+    @if $type==1 {
+        //меньше контейнера
+        #{$property}: $startSize + px;
+        @media (max-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+        }
+    } @else if $type==2 {
+        //больше контейнера
+        #{$property}: $startSize + px;
+        @media (min-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        }
+    } @else {
+        //всегда
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+}
+
+@mixin first-page-bg {
+    width: 100%;
+    position: relative;
+    &::before,
+    &::after {
+        content: "";
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        z-index: -1;
+    }
+    &::before {
+        width: 63%;
+        left: 0px;
+        background-color: #f9f1e7;
+    }
+    &::after {
+        width: 37%;
+        right: 0px;
+        background-color: #fcf8f3;
+    }
+}
+
+// imgs
+@mixin full-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// hovers
+@mixin hover-link {
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        color: var(--color-primary);
+    }
+}
+
+// flex
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-center-start {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+@mixin flex-center-betwen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
