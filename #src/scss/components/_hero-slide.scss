@@ -1,0 +1,60 @@
+.hero-slide {
+    padding-top: rem(80);
+    min-width: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+    &__info {
+        opacity: 0;
+        width: rem(246);
+        @include adaptiveMinWidth("max-height", 400, 250, 768);
+        overflow: hidden;
+        padding: rem(24);
+        position: absolute;
+        bottom: rem(40);
+        right: rem(40);
+        @include transition;
+        @include opacity-bg;
+        z-index: 0;
+        h3,
+        p,
+        .price {
+            position: relative;
+            z-index: 1;
+        }
+        &:hover {
+            &::before {
+                @include transition;
+                opacity: 1;
+            }
+        }
+
+        &::before {
+            background-image: url(../img/arrow-slide.svg);
+            background-repeat: no-repeat;
+            background-position: bottom rem(20) right rem(20);
+        }
+    }
+
+    &__description {
+        max-height: rem(120);
+        margin: 15px 0;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        img {
+            @include full-img;
+        }
+    }
+}
+
+.swiper-slide-active {
+    .hero-slide__info {
+        animation: show-slide-info 0.5s linear;
+        opacity: 1;
+    }
+}

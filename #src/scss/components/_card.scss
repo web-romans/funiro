@@ -1,0 +1,121 @@
+.card {
+    position: relative;
+    background: #f4f5f7;
+    cursor: pointer;
+    &__img {
+        width: 100%;
+        height: rem(300);
+        overflow: hidden;
+        img {
+            @include transition;
+            @include full-img;
+        }
+    }
+    &__description {
+        padding: 0 rem(14);
+        padding-top: rem(18);
+        padding-bottom: rem(30);
+    }
+
+    &__title {
+        font-size: rem(24);
+        margin-bottom: rem(8);
+    }
+
+    &__price {
+        margin-top: rem(8);
+        @include flex-center-between;
+        gap: rem(10);
+    }
+
+    &__overlay {
+        @include transition;
+        opacity: 0;
+        @include flex-all-center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            background-color: #3a3a3a;
+            opacity: 0.72;
+        }
+    }
+
+    &:hover {
+        .card__overlay {
+            @include transition;
+            opacity: 1;
+        }
+
+        .card__img {
+            img {
+                @include transition;
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    &__btns {
+        @include flex-center-between;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 3;
+        flex: 0 1 200px;
+        a {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-weight: 600;
+            font-size: rem(16);
+            line-height: 1.5;
+            &::before {
+                margin-right: 10px;
+                font-size: rem(20);
+            }
+            @include hover-link;
+        }
+    }
+
+    &__btn {
+        flex: 0 1 100%;
+        margin-bottom: 10px;
+        border: 0;
+        font-size: rem(16);
+        padding: 12px 0;
+        font-weight: 500;
+    }
+
+    &__info {
+        position: absolute;
+        display: none;
+        top: rem(24);
+        right: rem(24);
+        z-index: 1;
+        width: rem(48);
+        height: rem(48);
+        border-radius: 50%;
+        font-weight: 500;
+        font-size: rem(16);
+        line-height: 1.5;
+        color: #ffffff;
+        &--sale {
+            @include flex-all-center;
+            background-color: var(--color-sale);
+        }
+
+        &--new {
+            @include flex-all-center;
+            background-color: var(--color-new);
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.products {
+    &__title {
+        flex: 0 1 100%;
+        text-align: center;
+        margin-bottom: rem(31);
+    }
+
+    &__list {
+        @include flex-start-between;
+        row-gap: rem(32);
+    }
+
+    &__item {
+        display: flex;
+    }
+
+    &__card {
+        flex: 0 1 285px;
+    }
+
+    &__btn {
+        padding: 12px 82px;
+        font-size: rem(16);
+        position: relative;
+        margin-left: 50%;
+        transform: translate(-50%, 0);
+    }
+}

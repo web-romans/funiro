@@ -10,12 +10,16 @@
 
 // подключения компонентов страницы (большие компоненты)
 @import "./components/header";
-
+@import "./components/hero";
+@import "./components/advantage";
+@import "./components/products";
 @import "./components/footer";
 
 // подключения компонентов страницы (маленькие компоненты)
 @import "./components/burger";
 @import "./components/nav";
-@import "./components/sub-menu";
 @import "./components/search-form";
 @import "./components/userbox";
+@import "./components/hero-swiper";
+@import "./components/hero-slide";
+@import "./components/card";

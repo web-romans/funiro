@@ -1,9 +1,23 @@
-@keyframes sub-menu-show {
+@keyframes active-bullet {
     0% {
-        transform: translate(-100%, 0);
+        width: 0;
+        height: 0;
     }
 
     100% {
-        transform: translate(0, 0);
+        width: 26px;
+        height: 26px;
+    }
+}
+
+@keyframes show-slide-info {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }

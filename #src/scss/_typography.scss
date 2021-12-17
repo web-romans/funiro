@@ -1,50 +1,68 @@
 h1 {
-    font-weight: 500;
-    font-size: 50px;
-    line-height: 70px;
-    color: var(--color-black);
-    b {
-        font-weight: 700;
-    }
+    font-weight: 700;
+    @include adaptive("font-size", 56, 42, 1);
+    line-height: 1.2;
+    color: var(--color-black-gray);
 }
 
 h2 {
-    font-weight: 500;
-    font-size: 35px;
-    line-height: 50px;
-    color: var(--color-black);
-    @include mobile {
-        font-size: 25px;
-        line-height: 35px;
-        margin-bottom: 10px;
-    }
+    font-weight: 700;
+    font-size: rem(40);
+    line-height: 1.2;
+    color: var(--color-black-gray);
 }
 
 h3 {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 30px;
-    color: var(--color-black);
+    font-weight: 600;
+    font-size: rem(28);
+    line-height: 1.2;
+    color: var(--color-black-gray);
 }
 
 p {
-    font-size: 16px;
-    line-height: 30px;
-    color: var(--color-gray);
-    b {
-        color: var(--color-black);
+    font-weight: 500;
+    font-size: rem(16);
+    line-height: 1.5;
+    color: var(--color-dove-gray);
+}
+
+.price {
+    font-weight: 600;
+    font-size: rem(20);
+    line-height: 150%;
+    color: var(--color-dove-gray);
+    &--old {
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 1.5;
+        text-decoration-line: line-through;
+        color: #b0b0b0;
     }
 }
 
-.list {
-    li {
-        font-size: 14px;
-        line-height: 30px;
-        color: var(--color-gray);
-        padding-left: 34px;
-        background-image: url(../img/li.svg);
-        background-position: center left;
-        background-repeat: no-repeat;
-        margin-bottom: 15px;
+.btn {
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--color-light);
+    background: var(--color-primary);
+    border: 0;
+    @include flex-all-center;
+    @include transition;
+    cursor: pointer;
+    &:hover {
+        @include transition;
+        color: var(--color-primary);
+        background: rgba(#e89f71, 0.3);
+    }
+
+    &--clear {
+        background: var(--color-light);
+        color: var(--color-primary);
+        border: 1px var(--color-primary) solid;
+        &:hover {
+            @include transition;
+            color: var(--color-light);
+            background: var(--color-primary);
+        }
     }
 }

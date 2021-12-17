@@ -1,0 +1,87 @@
+.hero-swiper {
+    &__wrapper {
+        justify-content: space-between;
+    }
+    &__button {
+        position: absolute;
+        font-size: rem(10);
+        width: rem(48);
+        height: rem(48);
+        top: rem(10);
+        border-radius: 50%;
+        z-index: 3;
+        cursor: pointer;
+        &::before {
+            transform: translateY(rem(2));
+        }
+        &--next {
+            right: rem(18);
+            transform: rotate(270deg);
+        }
+
+        &--prev {
+            right: rem(75);
+            transform: rotate(90deg);
+        }
+
+        @include minitablet {
+            top: auto;
+            bottom: rem(-60);
+
+            &--prev {
+                right: auto;
+                left: 18px;
+            }
+        }
+    }
+    &__pagination {
+        position: absolute;
+        display: flex;
+        gap: rem(20);
+        z-index: 3;
+        top: rem(29);
+        @include adaptiveMinWidth("left", 650, 520, 768);
+        transform: translateX(-50%);
+
+        @include minitablet {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(0);
+            left: 0;
+        }
+    }
+}
+
+.swiper-pagination-bullet {
+    width: rem(12);
+    height: rem(12);
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    @include transition;
+    &:hover {
+        @include transition;
+        background-color: var(--color-primary);
+    }
+}
+
+.swiper-pagination-bullet-active {
+    @include transition;
+    background-color: var(--color-primary);
+    &::before {
+        content: "";
+        animation: active-bullet 0.2s linear;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        border: 1px var(--color-primary) solid;
+        border-radius: 50%;
+        width: rem(26);
+        height: rem(26);
+        @include transition;
+    }
+}

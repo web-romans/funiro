@@ -1,6 +1,6 @@
 .nav {
     &__list {
-        @include flex-center-betwen;
+        @include flex-center-between;
         margin: 0 -20px;
     }
     &__item {
@@ -8,20 +8,25 @@
     }
 
     &__link {
-        font-family: "Gilroy", sans-serif;
-        font-weight: 500;
-        font-size: rem(16);
-        line-height: 1.5;
-        color: #3a3a3a;
-        &--sub {
-            padding-right: rem(23);
-            background-image: url(../img/arrow-ico.svg);
-            background-repeat: no-repeat;
-            background-position: right center;
-            &:hover {
-                background-image: url(../img/arrow-ico-hover.svg);
-            }
-        }
+        @include nav-link-text;
         @include hover-link;
+    }
+
+    &.open {
+        overflow-y: scroll;
+        z-index: 99;
+        flex: 0 1 100%;
+        @include flex-all-center;
+        .nav__list {
+            height: calc(100vh - 200px);
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+        .nav__item {
+            flex: 0 1 100%;
+            text-align: center;
+            margin-bottom: rem(20);
+        }
     }
 }

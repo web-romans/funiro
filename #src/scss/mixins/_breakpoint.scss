@@ -4,12 +4,6 @@
     }
 }
 
-@mixin container {
-    @media (max-width: (1260px)) {
-        @content;
-    }
-}
-
 @mixin tablet {
     @media (max-width: (980px)) {
         @content;

@@ -1,0 +1,45 @@
+.advantage {
+    &__list {
+        margin: 0;
+        @include adaptive("margin-top", 101, 40, 1);
+        @include adaptive("margin-bottom", 85, 40, 1);
+        @include flex-center-between;
+        @include adaptive("gap", 60, 20, 1);
+        @include tablet {
+            flex-wrap: wrap;
+        }
+        @include minitablet {
+            justify-content: center;
+        }
+    }
+    &__item {
+        flex: 0 1 23%;
+        display: flex;
+
+        @include tablet {
+            flex: 0 1 40%;
+        }
+
+        @include mobile {
+            flex: 0 1 100%;
+        }
+    }
+    &__icon {
+        @include flex-all-center;
+        flex: 1 0 rem(86);
+    }
+    &__text {
+        @include flex-center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        flex: 0 1 100%;
+    }
+    &__title {
+        font-size: rem(18);
+        flex: 0 1 100%;
+    }
+
+    &__description {
+        flex: 0 1 100%;
+    }
+}

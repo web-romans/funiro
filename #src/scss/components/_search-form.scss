@@ -22,6 +22,11 @@
             border: 1px var(--color-primary) solid;
             transition: all 0.2s ease-in-out;
         }
+        /*
+        @include mobile {
+            flex: 0 1 100%;
+            min-width: auto;
+        }*/
     }
     &__btn {
         position: absolute;

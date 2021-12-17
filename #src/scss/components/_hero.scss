@@ -1,0 +1,68 @@
+.hero {
+    overflow: hidden;
+    position: relative;
+    @include first-page-bg;
+    &__container {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+    }
+
+    &__swiper {
+        width: 76%;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 15px;
+        @include adaptive("padding", 60, 15, 1);
+        @include adaptive("width", 490, 290, 1);
+        @include opacity-bg;
+        &:hover {
+            &::before {
+                @include transition;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: rem(16);
+    }
+
+    &__description {
+        max-height: 220px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: rem(20);
+    }
+
+    &__btn {
+        @include adaptiveMinWidth("margin-top", 48, 16, 768);
+        font-size: rem(20);
+        height: rem(78);
+    }
+
+    @include minitablet {
+        &__container {
+            flex-wrap: wrap;
+        }
+        &__info {
+            position: relative;
+            flex: 0 1 100%;
+            top: auto;
+            left: auto;
+            margin-bottom: rem(20);
+        }
+        &__description {
+            max-height: none;
+        }
+        &__swiper {
+            display: none;
+        }
+    }
+}
