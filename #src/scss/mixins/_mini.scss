@@ -129,6 +129,11 @@
     align-items: flex-start;
     justify-content: space-between;
 }
+@mixin flex-start-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 // styles
 

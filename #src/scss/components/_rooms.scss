@@ -1,0 +1,52 @@
+.rooms {
+    padding: rem(44) 0;
+    background-color: #fcf8f3;
+    &__container {
+        padding: 0 rem(20);
+        @include flex-center-between;
+        @include tablet {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__description {
+        flex: 0 0 28%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        @include tablet {
+            flex: 0 1 100%;
+            margin-bottom: rem(24);
+            align-items: center;
+        }
+    }
+
+    &__title {
+        margin-bottom: 8px;
+        @include tablet {
+            text-align: center;
+        }
+    }
+
+    &__text {
+        width: 80%;
+        margin-bottom: rem(24);
+        @include tablet {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__btn {
+        padding: rem(12) rem(40);
+    }
+
+    &__slider {
+        overflow: hidden;
+        flex: 0 1 70%;
+        @include tablet {
+            flex: 0 1 100%;
+        }
+    }
+}

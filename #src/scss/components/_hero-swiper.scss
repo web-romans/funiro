@@ -60,6 +60,7 @@
     background-color: #d8d8d8;
     border-radius: 50%;
     position: relative;
+    z-index: 3;
     cursor: pointer;
     @include transition;
     &:hover {
@@ -82,6 +83,7 @@
         border-radius: 50%;
         width: rem(26);
         height: rem(26);
+        z-index: 4;
         @include transition;
     }
 }

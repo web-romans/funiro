@@ -3,8 +3,24 @@ var headerBurger = document.querySelector('.burger');
 var headerMenu = document.querySelector('.nav');
 var search = document.querySelector('.search-form');
 var userbox = document.querySelector('.userbox');
+
+
+var rooms = document.querySelector('.rooms__container');
 //var overlay = document.getElementById('nav');
 //var btns = document.getElementById('btns');
+
+function roomsWidth() {
+    if (window.innerWidth >= 1280) {
+        var maxWidth = document.body.clientWidth;
+        var offsetRooms = (maxWidth - 1246) / 2;
+        rooms.style.marginLeft = offsetRooms + 'px';
+        rooms.style.width = (maxWidth - offsetRooms) + 'px';
+    }
+
+}
+
+roomsWidth();
+
 
 headerBurger.addEventListener('click', function () {
     header.classList.toggle("mobile")
@@ -18,6 +34,7 @@ headerBurger.addEventListener('click', function () {
 
 /* Меню фикс при ресайзе */
 window.addEventListener('resize', function (event) {
+    roomsWidth();
     if (window.innerWidth >= 980) {
         header.classList.remove("mobile")
         headerBurger.classList.remove("close");
@@ -42,23 +59,18 @@ var heroSwiper = new Swiper(".hero-swiper", {
     pagination: {
         el: ".hero-swiper__pagination",
         clickable: true,
-    },
-    /*
-    breakpoint: {
-        320: {
-            slidesPerView: "auto",
-            centeredSlides: true,
-            navigation: true,
-            pagination: true,
-        },
-        560: {
-            slidesPerView: 2,
-            centeredSlides: true,
-        },
-        980: {
-            slidesPerView: "auto",
-            centeredSlides: true,
-        }
     }
-    */
+
+});
+
+var roomsSwiper = new Swiper(".rooms-slider", {
+    slidesPerView: "auto",
+    spaceBetween: 24,
+    loop: true,
+    loopedSlides: 5,
+    slideClass: "rooms-slider__slide",
+    pagination: {
+        el: ".rooms-slider__pagination",
+        clickable: true,
+    }
 });
