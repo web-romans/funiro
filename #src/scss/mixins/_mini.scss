@@ -144,3 +144,17 @@
     line-height: 1.5;
     color: var(--color-black-gray);
 }
+
+@mixin coll-title {
+    font-weight: 700;
+    font-size: rem(24);
+    line-height: 1.2;
+    color: #000000;
+}
+
+@mixin text {
+    font-weight: 500;
+    font-size: rem(16);
+    line-height: 1.5;
+    color: var(--color-dove-gray);
+}

@@ -1,2 +1,129 @@
 .footer {
+    padding-bottom: rem(50);
+    &__container {
+        padding-top: rem(80);
+        border-top: 1px solid #d8d8d8;
+        @include flex-start-between;
+        @include adaptiveMinWidth("gap", 80, 20, 1280);
+
+        @include tablet {
+            flex-wrap: wrap;
+            gap: unset;
+        }
+    }
+
+    &__info {
+        flex: 0 1 rem(250);
+        display: flex;
+        flex-direction: column;
+        gap: rem(16);
+        p {
+            font-weight: 500;
+        }
+        @include tablet {
+            flex: 0 1 48%;
+            order: 1;
+        }
+
+        @include mobile {
+            flex: 0 1 100%;
+            margin-bottom: rem(24);
+        }
+    }
+
+    &__info-link {
+        @include text;
+        font-weight: 400;
+        @include hover-link;
+        display: flex;
+        align-items: center;
+        &::before {
+            margin-right: rem(5);
+        }
+
+        &.icon-location {
+            &::before {
+                margin-right: 0;
+                transform: translateX(-5px);
+                font-size: 25px;
+            }
+        }
+    }
+
+    &__nav {
+        flex: 1 1 auto;
+        @include tablet {
+            flex: 0 1 100%;
+            margin-top: rem(24);
+            order: 3;
+        }
+    }
+
+    &__menu {
+        @include flex-start-between;
+        @include mobile {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__menu-item {
+        @include mobile {
+            flex: 0 1 100%;
+            position: relative;
+            margin-bottom: rem(24);
+            @include transition;
+            &::before {
+                content: "";
+                @include transition;
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                right: 0px;
+                top: 0px;
+                background-image: url(../img/arrow-ico.svg);
+                background-repeat: no-repeat;
+            }
+            &.open {
+                @include transition;
+                &::before {
+                    @include transition;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    &__sub-menu {
+        display: flex;
+        margin-top: rem(16);
+        flex-direction: column;
+        gap: rem(16);
+        @include mobile {
+            height: 0px;
+            opacity: 0;
+            &.open {
+                @include transition;
+                height: auto;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__sub-item {
+        a {
+            @include text;
+            @include hover-link;
+        }
+    }
+
+    &__subscribe {
+        flex: 0 1 rem(292);
+        @include tablet {
+            flex: 0 1 48%;
+            order: 2;
+        }
+        @include mobile {
+            flex: 0 1 100%;
+        }
+    }
 }

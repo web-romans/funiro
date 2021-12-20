@@ -20,10 +20,7 @@ h3 {
 }
 
 p {
-    font-weight: 500;
-    font-size: rem(16);
-    line-height: 1.5;
-    color: var(--color-dove-gray);
+    @include text;
 }
 
 .price {

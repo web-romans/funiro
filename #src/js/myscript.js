@@ -4,10 +4,19 @@ var headerMenu = document.querySelector('.nav');
 var search = document.querySelector('.search-form');
 var userbox = document.querySelector('.userbox');
 
-
 var rooms = document.querySelector('.rooms__container');
+
+var mobileSelect = document.querySelectorAll('.footer__menu-item');
 //var overlay = document.getElementById('nav');
 //var btns = document.getElementById('btns');
+
+for (var i = 0; i <= mobileSelect.length; i++) {
+    mobileSelect[i].addEventListener('click', function () {
+        this.classList.toggle("open");
+        this.querySelector(".footer__sub-menu").classList.toggle("open");
+    });
+}
+
 
 function roomsWidth() {
     if (window.innerWidth >= 1280) {

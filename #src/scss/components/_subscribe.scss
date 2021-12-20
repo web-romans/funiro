@@ -1,0 +1,35 @@
+.subscribe {
+    @include flex-center-between;
+    flex-wrap: wrap;
+    gap: rem(4);
+    &__title {
+        flex: 0 1 100%;
+        margin-bottom: rem(16);
+    }
+
+    &__input {
+        font-family: "Gilroy", sans-serif;
+        flex: 1 1 auto;
+        padding: rem(12);
+        height: rem(46);
+        border: 0;
+        background-color: #f4f5f7;
+        font-size: rem(16);
+        line-height: 1.5;
+        color: #000;
+        outline: none;
+        @include transition;
+        &::placeholder {
+            color: #828282;
+        }
+        &:focus {
+            @include transition;
+            border: 1px var(--color-primary) solid;
+        }
+    }
+
+    &__btn {
+        width: rem(46);
+        height: rem(46);
+    }
+}

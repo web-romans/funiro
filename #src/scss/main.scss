@@ -15,10 +15,13 @@
 @import "./components/products";
 @import "./components/rooms";
 @import "./components/tips";
+@import "./components/your-setups";
 @import "./components/footer";
 
 // подключения компонентов страницы (маленькие компоненты)
 @import "./components/burger";
+@import "./components/coll-title";
+@import "./components/logo";
 @import "./components/nav";
 @import "./components/search-form";
 @import "./components/userbox";
@@ -28,3 +31,4 @@
 @import "./components/card";
 @import "./components/rooms-slider";
 @import "./components/tips-slider";
+@import "./components/subscribe";

@@ -7,10 +7,6 @@
     }
 
     &__logo {
-        font-weight: 700;
-        font-size: rem(24);
-        line-height: 1.2;
-        color: #000000;
         @include hover-link;
     }
 

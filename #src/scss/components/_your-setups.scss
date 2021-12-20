@@ -1,0 +1,26 @@
+.your-setups {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: rem(87);
+    &__title {
+        flex: 0 1 100%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        span {
+            flex: 0 1 100%;
+            margin-bottom: rem(5);
+            font-weight: 600;
+            font-size: rem(20);
+            line-height: 1.5;
+            color: #616161;
+        }
+        a {
+            flex: 0 1 100%;
+            font-weight: 700;
+            font-size: rem(40);
+            line-height: 1.2;
+            color: var(--color-black-gray);
+        }
+    }
+}
