@@ -18,10 +18,16 @@
 
     &__item {
         display: flex;
+        @include mobile {
+            flex: 0 1 100%;
+        }
     }
 
     &__card {
         flex: 0 1 rem(285);
+        @include mobile {
+            flex: 0 1 100%;
+        }
     }
 
     &__btn {

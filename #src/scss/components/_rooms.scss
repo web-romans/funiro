@@ -1,6 +1,9 @@
 .rooms {
     padding: rem(44) 0;
     background-color: #fcf8f3;
+    @include mobile {
+        padding-bottom: 0;
+    }
     &__container {
         padding: 0 rem(20);
         @include flex-center-between;

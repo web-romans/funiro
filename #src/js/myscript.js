@@ -11,10 +11,13 @@ var mobileSelect = document.querySelectorAll('.footer__menu-item');
 //var btns = document.getElementById('btns');
 
 for (var i = 0; i <= mobileSelect.length; i++) {
-    mobileSelect[i].addEventListener('click', function () {
-        this.classList.toggle("open");
-        this.querySelector(".footer__sub-menu").classList.toggle("open");
-    });
+    if (mobileSelect[i]) {
+        mobileSelect[i].addEventListener('click', function () {
+            this.classList.toggle("open");
+            this.querySelector(".footer__sub-menu").classList.toggle("open");
+        });
+    }
+
 }
 
 
