@@ -74,3 +74,31 @@ var roomsSwiper = new Swiper(".rooms-slider", {
         clickable: true,
     }
 });
+
+var tipsSwiper = new Swiper(".tips-slider", {
+    centeredSlides: true,
+    slidesPerView: 3,
+    spaceBetween: 32,
+    loop: true,
+    loopedSlides: 55,
+    slideClass: "tips-slider__slide",
+    pagination: {
+        el: ".tips-slider__pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".tips-slider__button--next",
+        prevEl: ".tips-slider__button--prev",
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        560: {
+            slidesPerView: 2,
+        },
+        768: {
+            slidesPerView: 3,
+        }
+    }
+});

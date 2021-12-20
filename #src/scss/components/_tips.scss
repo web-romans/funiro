@@ -1,0 +1,14 @@
+.tips {
+    padding: rem(44) 0;
+    &__container {
+        overflow: hidden;
+    }
+    &__title {
+        width: 100%;
+        text-align: center;
+    }
+
+    &__slider {
+        width: 100%;
+    }
+}

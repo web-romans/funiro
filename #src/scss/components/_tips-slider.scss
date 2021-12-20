@@ -1,0 +1,82 @@
+.tips-slider {
+    display: flex;
+    position: relative;
+    padding: 30px 0 70px 0;
+    &__slide {
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--color-light);
+
+        @include transition;
+        &:hover {
+            @include transition;
+            box-shadow: 0px 7px 16px 16px rgba(34, 60, 80, 0.1);
+        }
+    }
+    &__img {
+        flex: 0 1 100%;
+        height: rem(250);
+        img {
+            @include full-img;
+        }
+    }
+
+    &__description {
+        flex: 0 1 100%;
+        padding: rem(16);
+    }
+
+    &__title {
+        margin-bottom: rem(8);
+        font-size: rem(24);
+    }
+
+    &__date {
+        font-weight: 400;
+        font-size: rem(14);
+        line-height: 1.5;
+        color: #898989;
+    }
+
+    &__pagination {
+        position: absolute;
+        bottom: rem(10);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__button {
+        position: absolute;
+        font-size: rem(10);
+        width: rem(48);
+        height: rem(48);
+        top: 40%;
+        background-color: var(--color-light);
+        color: var(--color-primary);
+        border-radius: 50%;
+        z-index: 3;
+        &:hover {
+            background-color: var(--color-primary);
+            color: var(--color-light);
+        }
+        &::before {
+            transform: translateY(rem(2));
+        }
+        &--next {
+            right: rem(-20);
+            transform: rotate(270deg);
+            @media (max-width: 1280px) {
+                right: 0;
+            }
+        }
+
+        &--prev {
+            left: rem(-20);
+            transform: rotate(90deg);
+            @media (max-width: 1280px) {
+                left: 0;
+            }
+        }
+    }
+}
