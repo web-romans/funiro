@@ -10,6 +10,12 @@ var mobileSelect = document.querySelectorAll('.footer__menu-item');
 //var overlay = document.getElementById('nav');
 //var btns = document.getElementById('btns');
 
+window.addEventListener('scroll', function () {
+    if (window.pageYOffset > 0) header.classList.add("fixed")
+    else header.classList.remove("fixed")
+});
+
+
 for (var i = 0; i <= mobileSelect.length; i++) {
     if (mobileSelect[i]) {
         mobileSelect[i].addEventListener('click', function () {
