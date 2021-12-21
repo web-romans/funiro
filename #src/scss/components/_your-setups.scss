@@ -1,7 +1,9 @@
 .your-setups {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: rem(87);
+    padding-bottom: rem(53);
+    padding-left: rem(20);
+    padding-right: rem(20);
     &__title {
         flex: 0 1 100%;
         display: flex;

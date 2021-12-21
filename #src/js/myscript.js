@@ -22,12 +22,17 @@ for (var i = 0; i <= mobileSelect.length; i++) {
 
 
 function roomsWidth() {
+    var maxWidth = document.body.clientWidth;
     if (window.innerWidth >= 1280) {
-        var maxWidth = document.body.clientWidth;
         var offsetRooms = (maxWidth - 1246) / 2;
         rooms.style.marginLeft = offsetRooms + 'px';
         rooms.style.width = (maxWidth - offsetRooms) + 'px';
+
+    } else {
+        rooms.style.marginLeft = 0 + 'px';
+        rooms.style.width = maxWidth + 'px';
     }
+    console.log(rooms.style.width);
 
 }
 
@@ -114,3 +119,12 @@ var tipsSwiper = new Swiper(".tips-slider", {
         }
     }
 });
+
+
+var setupsSwiper = new Swiper(".setups-slider", {
+    slidesPerView: "auto",
+    spaceBetween: 16,
+    freemode: true,
+    slideClass: "setups-slider__slide"
+});
+
